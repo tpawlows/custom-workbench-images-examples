@@ -17,5 +17,5 @@ applyit ODH-TEC-Custom-Workbench-Image.yaml
 * All the images:
 
 ```bash
-oc apply -k https://github.com/rh-ai-kickstart/custom-workbench-images-examples/
+oc apply -k https://github.com/rh-ai-kickstart/custom-workbench-images-examples/imagestreams/
 ```
