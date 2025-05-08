@@ -4,7 +4,7 @@ metadata:
   annotations:
     opendatahub.io/notebook-image-desc: 'AnythingLLM Workbench Image (from: https://quay.io/repository/rh-aiservices-bu/anythingllm-workbench?tab=tags'
     opendatahub.io/notebook-image-name: 'Kickstart Image: AnythingLLM Workbench'
-    opendatahub.io/notebook-image-url: 'https://quay.io/repository/rh-aiservices-bu/anythingllm-workbench?tab=tags'
+    # opendatahub.io/notebook-image-url: 'https://quay.io/repository/rh-aiservices-bu/anythingllm-workbench?tab=tags'
     opendatahub.io/recommended-accelerators: '[]'
   name: kickstart-image-anythingllm-workbench
   namespace: redhat-ods-applications
@@ -21,6 +21,7 @@ spec:
         opendatahub.io/notebook-python-dependencies: '[]'
         opendatahub.io/notebook-software: '[]'
         openshift.io/imported-from: 'quay.io/rh-aiservices-bu/anythingllm-workbench:1.7.5'
+        opendatahub.io/workbench-image-recommended: 'true'
       from:
         kind: DockerImage
         name: 'quay.io/rh-aiservices-bu/anythingllm-workbench:1.7.5'
@@ -33,6 +34,7 @@ spec:
         opendatahub.io/notebook-python-dependencies: '[]'
         opendatahub.io/notebook-software: '[]'
         openshift.io/imported-from: 'quay.io/rh-aiservices-bu/anythingllm-workbench:1.7.4'
+        opendatahub.io/workbench-image-recommended: 'false'
       from:
         kind: DockerImage
         name: 'quay.io/rh-aiservices-bu/anythingllm-workbench:1.7.4'
