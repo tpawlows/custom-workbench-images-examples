@@ -35,7 +35,7 @@ spec:
         openshift.io/imported-from: 'quay.io/rh-aiservices-bu/anythingllm-workbench:1.7.4'
       from:
         kind: DockerImage
-        name: 'quay.io/rh-aiservices-bu/anythingllm-workbench:1.7.5'
+        name: 'quay.io/rh-aiservices-bu/anythingllm-workbench:1.7.4'
       importPolicy:
         importMode: Legacy
       referencePolicy:
