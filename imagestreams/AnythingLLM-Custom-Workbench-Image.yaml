@@ -3,7 +3,7 @@ apiVersion: image.openshift.io/v1
 metadata:
   annotations:
     opendatahub.io/notebook-image-desc: 'AnythingLLM Workbench Image (from: https://quay.io/repository/rh-aiservices-bu/anythingllm-workbench?tab=tags'
-    opendatahub.io/notebook-image-order: '51'
+    opendatahub.io/notebook-image-order: '01'
     opendatahub.io/notebook-image-url: 'https://quay.io/repository/rh-aiservices-bu/anythingllm-workbench?tab=tags'
     opendatahub.io/notebook-image-name: 'Kickstart Custom Image: AnythingLLM Workbench'
     opendatahub.io/recommended-accelerators: '[]'

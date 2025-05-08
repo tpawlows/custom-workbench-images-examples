@@ -3,7 +3,7 @@ apiVersion: image.openshift.io/v1
 metadata:
   annotations:
     opendatahub.io/notebook-image-desc: 'ODH-TEC Workbench Image (from: https://quay.io/repository/rh-aiservices-bu/odh-tec?tab=tags'
-    opendatahub.io/notebook-image-order: '52'
+    opendatahub.io/notebook-image-order: '02'
     opendatahub.io/notebook-image-url: 'https://quay.io/repository/rh-aiservices-bu/odh-tec?tab=tags'
     opendatahub.io/notebook-image-name: 'Kickstart Custom Image: ODH-TEC Workbench'
     opendatahub.io/recommended-accelerators: '[]'
