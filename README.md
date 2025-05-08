@@ -10,7 +10,7 @@ alias applyit='oc apply -f https://raw.githubusercontent.com/rh-ai-kickstart/cus
 # AnythingLLM:
 applyit AnythingLLM-Custom-Workbench-Image.yaml
 # ODH-TEC
-applyit ODH-TEC-Custom-Workbench-Image.yaml`
+applyit ODH-TEC-Custom-Workbench-Image.yaml
 ```
 
 

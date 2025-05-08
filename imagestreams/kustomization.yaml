@@ -1,0 +1,3 @@
+resources:
+- imagestreams/AnythingLLM-Custom-Workbench-Image.yaml
+- imagestreams/ODH-TEC-Custom-Workbench-Image.yaml
