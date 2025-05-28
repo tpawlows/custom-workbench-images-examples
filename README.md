@@ -1,62 +1,83 @@
-# custom-workbench-images-examples
+# Custom Workbench Images for Red Hat OpenShift AI
 
-Welcome to the Custom Workbench Images AI kickstart!
+This repository provides a fast way to add a collection of community-contributed Custom Workbench Images for Red Hat OpenShift AI (RHOAI).
 
-This AI Kickstart will quickly add a number of community-provide Custom Workbench Images into your RHOAI environment.
+These images extend the functionality of your RHOAI environment with additional tools and capabilities that can be immediately accessed by all users.
 
-These images will immediately be available to all your OpenShift AI users.
+They are not part of the core product, and therefore, do not fall under the support umbrella of OpenShift AI.
 
-## Description
+## Overview
 
-While OpenShift AI comes with a number of Red Hat-provided images, it can be useful to supplement them with Custom Workbench Images.
+Red Hat OpenShift AI comes with several Red Hat-provided Workbench images out of the box. This collection supplements those with additional custom workbench images that add specialized tools and capabilities for specific use cases.
 
-### List of images and main features
+## Available Images
 
-* ODH-TEC: S3 web-based browser
-* AnythingLLM: Chatbot Frontend, can easily connect to LLMs via OpenAI-compatible API
+### AnythingLLM
+- **Description**: A powerful chatbot frontend that easily connects to Large Language Models
+- **Key Features**:
+  - OpenAI-compatible API integration
+  - User-friendly chat interface
+  - Customizable chat experience
+- **Github Repository**: https://github.com/rh-aiservices-bu/llm-on-openshift/tree/main/llm-clients/anythingllm
 
+### ODH-TEC
+- **Description**: Enhanced data science workbench with S3 capabilities
+- **Key Features**:
+  - Web-based S3 browser
+  - Integrated data science tools
+  - Streamlined data access
+- **Github Repository**: https://github.com/opendatahub-io-contrib/odh-tec
 
-## Required software
+## Prerequisites
 
-- Red Hat OpenShift
-- Red Hat OpenShift AI
+Before installing these custom workbench images via this Kickstart, ensure you have:
 
-## Installation instructions
+- Red Hat OpenShift cluster with administrator access
+- Red Hat OpenShift AI (RHOAI) installed and configured
+- `oc` CLI tool installed and configured
+- Cluster-admin privileges
 
-* The commands in this sections require:
-  * access to the `oc` cli
-  * cluster-admin level of access to the cluster.
+## Installation
 
-An easy way to quickly add a lot of useful, community-provided, custom Workbench Images
+You can install all images at once or individually based on your needs.
 
+### Install All Images
 
+```bash
+# Apply all custom workbench images
+oc apply -k https://github.com/rh-ai-kickstart/custom-workbench-images-examples/imagestreams/
+```
 
-* All the images:
+### Install Individual Images
 
-    ```bash
-    oc apply -k https://github.com/rh-ai-kickstart/custom-workbench-images-examples/imagestreams/
-    ```
+```bash
+# Set the base URL for individual image streams
+URL='https://raw.githubusercontent.com/rh-ai-kickstart/custom-workbench-images-examples/refs/heads/main/imagestreams/'
 
-* delete all the images:
+# Install AnythingLLM
+oc apply -f ${URL}/AnythingLLM-Custom-Workbench-Image.yaml
 
-    ```bash
-    oc delete -k https://github.com/rh-ai-kickstart/custom-workbench-images-examples/imagestreams/
-    ```
+# Install ODH-TEC
+oc apply -f ${URL}/ODH-TEC-Custom-Workbench-Image.yaml
+```
 
-* individually:
+### Uninstall Images
 
-    ```bash
+To remove all Kickstart-added custom workbench images:
 
-    URL='https://raw.githubusercontent.com/rh-ai-kickstart/custom-workbench-images-examples/refs/heads/main/imagestreams/'
+```bash
+oc delete -k https://github.com/rh-ai-kickstart/custom-workbench-images-examples/imagestreams/
+```
 
-    # AnythingLLM:
-    oc apply -f ${URL}/AnythingLLM-Custom-Workbench-Image.yaml
+## Usage
 
-    # ODH-TEC
-    oc apply -f ${URL}/ODH-TEC-Custom-Workbench-Image.yaml
+After installation, the custom workbench images will be available in your RHOAI dashboard. Users can select these images when creating new workbenches through the RHOAI interface.
 
-    # TODO
-    ## docling workbench
+## Contributing
 
-    ## others?
-    ```
+We welcome contributions! If you have a custom workbench image that could benefit the community, please consider submitting a pull request.
+
+## Support
+
+These images are community-contributed. While we strive to maintain quality and functionality, they are provided as-is without official support.
+
