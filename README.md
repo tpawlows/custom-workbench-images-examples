@@ -81,3 +81,17 @@ We welcome contributions! If you have a custom workbench image that could benefi
 
 These images are community-contributed. While we strive to maintain quality and functionality, they are provided as-is without official support.
 
+## Categories
+
+This project falls into the following categories:
+
+- AI
+- Workbench Images
+- RHOAI
+- OpenShift
+
+## Tags
+
+- custom-workbench
+- oc-apply
+- test
