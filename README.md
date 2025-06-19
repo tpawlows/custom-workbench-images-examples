@@ -6,13 +6,13 @@ These images extend the functionality of your RHOAI environment with additional 
 
 They are not part of the core product, and therefore, do not fall under the support umbrella of OpenShift AI.
 
-## Overview
+## Detailed description
 
 Red Hat OpenShift AI comes with several Red Hat-provided Workbench images out of the box. This collection supplements those with additional custom workbench images that add specialized tools and capabilities for specific use cases.
 
-## Available Images
+### Available Images
 
-### AnythingLLM
+#### AnythingLLM
 - **Description**: A powerful chatbot frontend that easily connects to Large Language Models
 - **Key Features**:
   - OpenAI-compatible API integration
@@ -20,7 +20,7 @@ Red Hat OpenShift AI comes with several Red Hat-provided Workbench images out of
   - Customizable chat experience
 - **Github Repository**: https://github.com/rh-aiservices-bu/llm-on-openshift/tree/main/llm-clients/anythingllm
 
-### ODH-TEC
+#### ODH-TEC
 - **Description**: Enhanced data science workbench with S3 capabilities
 - **Key Features**:
   - Web-based S3 browser
@@ -28,7 +28,7 @@ Red Hat OpenShift AI comes with several Red Hat-provided Workbench images out of
   - Streamlined data access
 - **Github Repository**: https://github.com/opendatahub-io-contrib/odh-tec
 
-## Prerequisites
+## Requirements
 
 Before installing these custom workbench images via this Kickstart, ensure you have:
 
@@ -61,7 +61,7 @@ oc apply -f ${URL}/AnythingLLM-Custom-Workbench-Image.yaml
 oc apply -f ${URL}/ODH-TEC-Custom-Workbench-Image.yaml
 ```
 
-### Uninstall Images
+## Uninstall Images
 
 To remove all Kickstart-added custom workbench images:
 
@@ -73,15 +73,17 @@ oc delete -k https://github.com/rh-ai-kickstart/custom-workbench-images-examples
 
 After installation, the custom workbench images will be available in your RHOAI dashboard. Users can select these images when creating new workbenches through the RHOAI interface.
 
-## Contributing
+## Additional information
+
+### Contributing
 
 We welcome contributions! If you have a custom workbench image that could benefit the community, please consider submitting a pull request.
 
-## Support
+### Support
 
 These images are community-contributed. While we strive to maintain quality and functionality, they are provided as-is without official support.
 
-## Categories
+### Categories
 
 This project falls into the following categories:
 
@@ -90,7 +92,7 @@ This project falls into the following categories:
 - RHOAI
 - OpenShift
 
-## Tags
+### Tags
 
 - custom-workbench
 - oc-apply
