@@ -10,6 +10,10 @@ They are not part of the core product, and therefore, do not fall under the supp
 
 Red Hat OpenShift AI comes with several Red Hat-provided Workbench images out of the box. This collection supplements those with additional custom workbench images that add specialized tools and capabilities for specific use cases.
 
+### Architecture diagrams
+
+![OpenShift AI Workbenches](assets/images/simple-arch-diag.png)
+
 ### Available Images
 
 #### AnythingLLM
