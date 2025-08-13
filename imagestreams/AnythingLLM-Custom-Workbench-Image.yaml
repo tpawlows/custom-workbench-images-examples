@@ -5,9 +5,9 @@ metadata:
     opendatahub.io/notebook-image-desc: 'AnythingLLM Workbench Image (from: https://quay.io/repository/rh-aiservices-bu/anythingllm-workbench?tab=tags'
     opendatahub.io/notebook-image-order: '01'
     opendatahub.io/notebook-image-url: 'https://quay.io/repository/rh-aiservices-bu/anythingllm-workbench?tab=tags'
-    opendatahub.io/notebook-image-name: 'Kickstart Custom Image: AnythingLLM Workbench'
+    opendatahub.io/notebook-image-name: 'AI Kickstart Custom Image: AnythingLLM Workbench'
     opendatahub.io/recommended-accelerators: '[]'
-  name: kickstart-image-anythingllm-workbench
+  name: ai-kickstart-image-anythingllm-workbench
   namespace: redhat-ods-applications
   labels:
     app.kubernetes.io/created-by: byon
