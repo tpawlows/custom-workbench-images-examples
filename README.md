@@ -105,3 +105,17 @@ We welcome contributions to expand this collection of custom workbench images. I
 
 These images are provided by the community and are not officially supported by Red Hat. They are provided as-is, and while we strive for quality, there is no guarantee of support. If you encounter issues, please check the respective GitHub repositories or open an issue in this repository. 
 
+
+### Categories
+
+This project falls into the following categories:
+
+- AI
+- Workbench Images
+- RHOAI
+- OpenShift
+
+### Tags
+
+- custom-workbench
+- oc-apply
