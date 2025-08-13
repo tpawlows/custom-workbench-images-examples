@@ -2,6 +2,8 @@
 
 This repository provides a fast way to add a collection of community-contributed Custom Workbench Images for Red Hat OpenShift AI (RHOAI).
 
+Whether you're a data scientist, developer, or AI enthusiast, these images offer a streamlined way to access specialized tools and libraries, helping you get to work faster.
+
 These images extend the functionality of your RHOAI environment with additional tools and capabilities that can be immediately accessed by all users.
 
 They are not part of the core product, and therefore, do not fall under the support umbrella of OpenShift AI.
@@ -43,7 +45,7 @@ Before installing these custom workbench images via this Kickstart, ensure you h
 
 ## Installation
 
-You can install all images at once or individually based on your needs.
+You can install all images at once or individually from the [`imagestreams`](./imagestreams) directory based on your needs.
 
 ### Install All Images
 
@@ -100,4 +102,3 @@ This project falls into the following categories:
 
 - custom-workbench
 - oc-apply
-- test
