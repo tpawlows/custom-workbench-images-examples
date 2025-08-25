@@ -60,7 +60,7 @@ To install all available custom workbench images, run the following command:
 
 ```bash
 # Apply all custom workbench images
-oc apply -k https://github.com/rh-ai-kickstart/custom-workbench-images-examples/imagestreams/
+oc apply -k https://github.com/rh-ai-quickstart/custom-workbench-images-examples/imagestreams/
 ```
 
 #### Install Individual Images
@@ -69,7 +69,7 @@ To install a specific image, use the appropriate command below:
 
 ```bash
 # Set the base URL for individual image streams
-URL='https://raw.githubusercontent.com/rh-ai-kickstart/custom-workbench-images-examples/main/imagestreams'
+URL='https://raw.githubusercontent.com/rh-ai-quickstart/custom-workbench-images-examples/main/imagestreams'
 
 # Install AnythingLLM
 oc apply -f ${URL}/AnythingLLM-Custom-Workbench-Image.yaml
@@ -87,7 +87,7 @@ After installation, the new images will be available in the RHOAI dashboard. Use
 To remove all custom workbench images added by this repository, run the following command:
 
 ```bash
-oc delete -k https://github.com/rh-ai-kickstart/custom-workbench-images-examples/imagestreams/
+oc delete -k https://github.com/rh-ai-quickstart/custom-workbench-images-examples/imagestreams/
 ```
 
 ## Community
