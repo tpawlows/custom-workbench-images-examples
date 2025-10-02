@@ -45,7 +45,7 @@ The following custom workbench images are available in this collection. For the 
   - Installed PyTorch with tools dedicated to Gaudi
   - Jupyter Notebook as user interface
   - Built on top of jupyter-minimal-ubi9-python-3.12 workbench from OpenDataHub
-  - Communication with Gaudi through Intel Gaudi Operator (**prior installation required**)
+  - Communication with Gaudi through [Intel Gaudi Operator](https://catalog.redhat.com/en/software/container-stacks/detail/6683b2cce45daa25e36bddcb) (**prior installation required**)
 - **GitHub Repository**: [HabanaAI/Setup_and_Install](https://github.com/HabanaAI/Setup_and_Install)
 
 ### [Gaudi-DataScience](./imagestreams/Gaudi-DataScience-Workbench-Image.yaml)
