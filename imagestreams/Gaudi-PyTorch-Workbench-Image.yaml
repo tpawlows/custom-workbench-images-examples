@@ -1,0 +1,43 @@
+kind: ImageStream
+apiVersion: image.openshift.io/v1
+metadata:
+  annotations:
+    opendatahub.io/notebook-image-desc: 'Intel Gaudi with Pytorch (https://github.com/HabanaAI/Setup_and_Install/pull/15)'
+    opendatahub.io/notebook-image-order: '01'
+    opendatahub.io/notebook-image-url: 'quay.io/tomasz_pawlowski/openshift-workbenches/pytorch-installer-rhel9.6.rhoai.pytorch-2.7.1?tab=tags'
+    opendatahub.io/notebook-image-name: 'AI Quickstart Custom Image: Intel Gaudi with Pytorch'
+    opendatahub.io/recommended-accelerators: '["habana.ai/gaudi"]'
+  name: ai-quickstart-image-gaudi-pytorch
+  namespace: redhat-ods-applications
+  labels:
+    app.kubernetes.io/created-by: byon
+    opendatahub.io/dashboard: 'true'
+    opendatahub.io/notebook-image: 'true'
+spec:
+  lookupPolicy:
+    local: true
+  tags:
+    - name: 1.22.1-6
+      annotations:
+        opendatahub.io/workbench-image-recommended: 'true'
+        openshift.io/imported-from: 'quay.io/tomasz_pawlowski/openshift-workbenches/pytorch-installer-rhel9.6.rhoai.pytorch-2.7.1:1.22.1-6'
+        opendatahub.io/notebook-python-dependencies: |
+          [
+            {"name": "OS", "version": "Red Hat UBI 9.6"},
+            {"name": "Python", "version": "v3.12"},
+            {"name": "PyTorch", "version": "2.7.1+hpu.1.22.1.6.git6dbe0a4"}
+            {"name": "Gaudi PyTorch modules", "version": "1.22.1-6"},
+            {"name": "Habanalabs hl-smi", "version": "hl-1.22.1-fw-61.4.2.1"},
+            {"name": "Habanalabs Driver", "version": "1.20.0-bd87f71"}
+          ]
+        opendatahub.io/notebook-software: |
+          [
+            {"name": "PyTorch", "version": "2.7.1+hpu.1.22.1.6"}
+          ]
+      from:
+        kind: DockerImage
+        name: 'quay.io/tomasz_pawlowski/openshift-workbenches/pytorch-installer-rhel9.6.rhoai.pytorch-2.7.1:1.22.1-6'
+      importPolicy:
+        importMode: Legacy
+      referencePolicy:
+        type: Source

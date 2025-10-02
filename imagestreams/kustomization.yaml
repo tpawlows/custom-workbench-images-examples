@@ -1,3 +1,5 @@
 resources:
   - AnythingLLM-Custom-Workbench-Image.yaml
   - ODH-TEC-Custom-Workbench-Image.yaml
+  - Gaudi-PyTorch-Workbench-Image.yaml
+  - Gaudi-DataScience-Workbench-Image.yaml

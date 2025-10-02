@@ -38,6 +38,25 @@ The following custom workbench images are available in this collection. For the 
   - Streamlined data access
 - **GitHub Repository**: [odh-tec](https://github.com/opendatahub-io-contrib/odh-tec)
 
+### [Gaudi-PyTorch](./imagestreams/Gaudi-PyTorch-Workbench-Image.yaml)
+
+- **Description**: A minimal workbench with Habana drivers and Gaudi PyTorch modules
+- **Key Features**:
+  - Installed PyTorch with tools dedicated to Gaudi
+  - Jupyter Notebook as user interface
+  - Built on top of jupyter-minimal-ubi9-python-3.12 workbench from OpenDataHub
+  - Communication with Gaudi through Intel Gaudi Operator (**prior installation required**)
+- **GitHub Repository**: [HabanaAI/Setup_and_Install](https://github.com/HabanaAI/Setup_and_Install)
+
+### [Gaudi-DataScience](./imagestreams/Gaudi-DataScience-Workbench-Image.yaml)
+
+- **Description**: An enhanced workbench for Gaudi with integrated data sciance tools
+- **Key Features**:
+  - Similar to Gaudi-PyTorch, but with data science tools
+  - Built on top of jupyter-datascience-ubi9-python workbench from OpenDataHub
+  - Requires Intel Gaudi Operator installed
+- **GitHub Repository**: [HabanaAI/Setup_and_Install](https://github.com/HabanaAI/Setup_and_Install)
+
 ## Getting Started
 
 Follow these steps to install and use the custom workbench images in your Red Hat OpenShift AI environment. For detailed installation instructions, see the documentation in the [`imagestreams`](./imagestreams) directory.
@@ -76,6 +95,12 @@ oc apply -f ${URL}/AnythingLLM-Custom-Workbench-Image.yaml
 
 # Install ODH-TEC
 oc apply -f ${URL}/ODH-TEC-Custom-Workbench-Image.yaml
+
+# Install Gaudi-PyTorch
+oc apply -f ${URL}/Gaudi-PyTorch-Workbench-Image.yaml
+
+# Install Gaudi-DataScience
+oc apply -f ${URL}/Gaudi-DataScience-Workbench-Image.yaml
 ```
 
 ## Usage
