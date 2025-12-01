@@ -53,7 +53,7 @@ gaudi-datascience:
 
 	@echo "Copying Dockerfiles to repository..."
 	@cp -r ./gaudi-datascience/base/Dockerfile.rhel9.6.rhoai.datascience "$(HABANA_DIR)/dockerfiles/base/"
-	@cp -r ./gaudi-datascience/datascience/Dockerfile.rhel9.6.rhoai.datascience "$(HABANA_DIR)/dockerfiles/pytorch/"
+	@cp -r ./gaudi-datascience/pytorch/Dockerfile.rhel9.6.rhoai.datascience "$(HABANA_DIR)/dockerfiles/pytorch/"
 
 	@echo "Building Gaudi Data Science ..."
 	@cd "$(HABANA_DIR)/dockerfiles/pytorch" && \
