@@ -1,3 +1,7 @@
+# Copyright (c) 2025 Habana Labs, Ltd.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
 # HabanaLabs Dockerfile PyTorch installer layer for RHEL 9.6
 ARG BASE_NAME
 ARG VERSION

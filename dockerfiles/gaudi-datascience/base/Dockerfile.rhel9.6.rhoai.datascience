@@ -1,4 +1,8 @@
-# HabanaLabs Dockerfile base installer layer for RedHat 9.6 dedicated for OpenShift
+# Copyright (c) 2025 Habana Labs, Ltd.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+# HabanaLabs Dockerfile base installer layer for RedH at 9.6 dedicated for OpenShift
 FROM quay.io/opendatahub/workbench-images:jupyter-datascience-ubi9-python-3.12-pr-2113
 ARG ARTIFACTORY_URL
 ARG VERSION
