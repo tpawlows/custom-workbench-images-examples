@@ -71,7 +71,7 @@ Before you begin, ensure you have the following:
 
 ### Installation
 
-You can install all images at once or individually from the [`imagestreams`](./imagestreams) directory based on your needs.
+You can install all images at once or individually from the [`imagestreams`](./imagestreams) directory based on your needs. Keep in mind that images that were build in [`dockerfiles`](./dockerfiles) directory have to be pushed after applying ImageStreams (Gaudi-PyTorch and Gaudi-DataScience).
 
 #### Install All Images
 
@@ -82,7 +82,7 @@ To install all available custom workbench images, run the following command:
 oc apply -k https://github.com/rh-ai-kickstart/custom-workbench-images-examples/imagestreams/
 ```
 
-#### Install Individual Images
+#### Install Individual Images from public registry
 
 To install a specific image, use the appropriate command below:
 
@@ -95,13 +95,29 @@ oc apply -f ${URL}/AnythingLLM-Custom-Workbench-Image.yaml
 
 # Install ODH-TEC
 oc apply -f ${URL}/ODH-TEC-Custom-Workbench-Image.yaml
+```
+
+#### Install Individual Images built locally
+
+To install images built locally, follow the instructions below:
+
+```bash
+# Enable route and login to the registry
+oc patch configs.imageregistry.operator.openshift.io/cluster --type=merge -p '{"spec":{"defaultRoute":true}}'
+REGISTRY=$(oc get route -n openshift-image-registry default-route -o jsonpath='{.spec.host}')
+docker login -u kubeadmin -p $(oc whoami -t) $REGISTRY
 
 # Install Gaudi-PyTorch
-oc apply -f ${URL}/Gaudi-PyTorch-Workbench-Image.yaml
+docker tag pytorch-installer-rhel9.6.rhoai.pytorch-2.7.1:1.22.1-6 $REGISTRY/redhat-ods-applications/ai-quickstart-image-gaudi-pytorch:1.22.1-6
+oc apply -f imagestreams/Gaudi-PyTorch-Workbench-Image.yaml
+docker push $REGISTRY/redhat-ods-applications/ai-quickstart-image-gaudi-pytorch:1.22.1-6
 
 # Install Gaudi-DataScience
-oc apply -f ${URL}/Gaudi-DataScience-Workbench-Image.yaml
+docker tag pytorch-installer-rhel9.6.rhoai.datascience-2.7.1:1.22.1-6 $REGISTRY/redhat-ods-applications/ai-quickstart-image-gaudi-datascience:1.22.1-6
+oc apply -f imagestreams/Gaudi-DataScience-Workbench-Image.yaml
+docker push $REGISTRY/redhat-ods-applications/ai-quickstart-image-gaudi-datascience:1.22.1-6
 ```
+
 
 ## Usage
 

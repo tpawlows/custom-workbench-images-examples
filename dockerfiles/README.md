@@ -23,7 +23,7 @@ Currently available workbench dockerfiles:
 
 # Building Dockerimage 
 
-Use make to build desired target dockerimage.
+Use make to build desired target docker image.
 
 ```bash
 # Gaudi-PyTorch
