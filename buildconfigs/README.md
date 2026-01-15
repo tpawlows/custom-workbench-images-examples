@@ -1,37 +1,60 @@
-# Custom Workbench Dockerfiles  
-Some images in this repository are not published to a public registry, but you can build them yourself using the provided recipes. This approach lets you customize the Dockerfile to meet your requirements. 
+# Custom Workbench BuildConfigs
 
-To build an image, run make with the desired target; the resulting local image will be ready for use. 
+Some workbench images in this repository are not available in public registries and must be built directly on your OpenShift cluster using BuildConfigs. This approach allows you to customize the build process and integrate the images seamlessly into your OpenShift AI environment.
 
-To use the image in OpenShift AI, apply an ImageStream from the `imagestreams` directory, then push the image to the OpenShift cluster.
+## Available Workbench BuildConfigs
 
-Currently available workbench dockerfiles:
- - Gaudi-PyTorch
-	- Name: `pytorch-installer-rhel9.6.rhoai.pytorch-2.7.1:1.22.1-6`
-	- OS: `RHEL 9.6`
-	- PyTorch: `2.7.1`
-	- Gaudi PyTorch modules: `1.22.1-6`
-	- Habanalabs hl-smi: `hl-1.22.1-fw-61.4.2.1`
-	- Habanalabs Driver: `1.20.0-bd87f71`
- - Gaudi-DataScience
-	- Name:  `pytorch-installer-rhel9.6.rhoai.datascience-2.7.1:1.22.1-6`
-	- OS: `RHEL 9.6`
-	- PyTorch: `2.7.1`
-	- Gaudi PyTorch modules: `1.22.1-6`
-	- Habanalabs hl-smi: `hl-1.22.1-fw-61.4.2.1`
-	- Habanalabs Driver: `1.20.0-bd87f71`
+The following workbenches require building on OpenShift:
 
-# Building Dockerimage 
+### Gaudi-PyTorch
+- **Image Name**: `ai-quickstart-image-gaudi-pytorch:1.22.1-6`
+- **Base OS**: RHEL 9.6
+- **PyTorch**: 2.7.1
+- **Gaudi PyTorch Modules**: 1.22.1-6
+- **Habanalabs hl-smi**: hl-1.22.1-fw-61.4.2.1
+- **Habanalabs Driver**: 1.20.0-bd87f71
 
-Use make to build desired target docker image.
+### Gaudi-DataScience
+- **Image Name**: `ai-quickstart-image-gaudi-datascience:1.22.1-6`
+- **Base OS**: RHEL 9.6
+- **PyTorch**: 2.7.1
+- **Gaudi PyTorch Modules**: 1.22.1-6
+- **Habanalabs hl-smi**: hl-1.22.1-fw-61.4.2.1
+- **Habanalabs Driver**: 1.20.0-bd87f71
+
+## Building Images on OpenShift
+
+When you apply a BuildConfig using `oc apply`, OpenShift automatically triggers a build process. The built image is stored in the internal registry and becomes available for use in OpenShift AI workbenches. Once the build completes successfully, **the workbench will automatically appear in the RHOAI dashboard and is ready to use, no additional configuration or steps are required.**
+
+### Build All Workbenches
+
+To build and install all workbench images on your OpenShift cluster:
 
 ```bash
-# Gaudi-PyTorch
-# - pytorch-installer-rhel9.6.rhoai.pytorch-2.7.1:1.22.1-6
-make gaudi-pytorch
-
-# Gaudi-DataScience
-# - pytorch-installer-rhel9.6.rhoai.datascience-2.7.1:1.22.1-6 
-make gaudi-datascience
+oc apply -k .
 ```
 
+### Build Individual Workbenches
+
+To build a specific workbench image:
+
+```bash
+# Build and install Gaudi-PyTorch
+oc apply -k gaudi-pytorch
+
+# Build and install Gaudi-DataScience
+oc apply -k gaudi-datascience
+```
+
+## Uninstalling
+
+Remove the BuildConfigs and associated resources:
+
+```bash
+# Remove all BuildConfigs and ImageStreams
+oc delete -k .
+
+# Remove individual BuildConfigs
+oc delete -k gaudi-pytorch
+oc delete -k gaudi-datascience
+```
