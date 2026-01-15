@@ -5,7 +5,7 @@ metadata:
   annotations:
     opendatahub.io/notebook-image-desc: 'Intel Gaudi with Pytorch (https://github.com/HabanaAI/Setup_and_Install/r1.22.1)'
     opendatahub.io/notebook-image-order: '01'
-    opendatahub.io/notebook-image-url: 'github.com/rh-ai-quickstart/custom-workbench-images-examples/blob/main/dockerfiles/gaudi-pytorch/pytorch/Dockerfile.rhel9.6.rhoai.pytorch'
+    opendatahub.io/notebook-image-url: 'github.com/rh-ai-quickstart/custom-workbench-images-examples/blob/main/buildconfigs/gaudi-pytorch/gaudi-pytorch-build-config.yaml'
     opendatahub.io/notebook-image-name: 'AI Quickstart Custom Image: Intel Gaudi with Pytorch'
     opendatahub.io/recommended-accelerators: '["habana.ai/gaudi"]'
   name: ai-quickstart-image-gaudi-pytorch
